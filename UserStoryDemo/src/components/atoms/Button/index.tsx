@@ -1,18 +1,11 @@
 import React from 'react'
 import Button, { ButtonProps as MuiButtonProps } from '@mui/material/Button'
 
-interface ExtendedButtonProps extends MuiButtonProps {
-  startIcon?: React.ReactNode
-  endIcon?: React.ReactNode
-}
-
-const ExtendedButton: React.FC<ExtendedButtonProps> = (props) => {
-  const { startIcon, endIcon, ...otherProps } = props
+const ExtendedButton: React.FC<MuiButtonProps> = (props) => {
+  const { ...otherProps } = props
 
   return (
     <Button
-      startIcon={startIcon}
-      endIcon={endIcon}
       {...otherProps}
       sx={{
         borderRadius: '18px',
